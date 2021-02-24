@@ -8,10 +8,20 @@ This project requires the following tools in order to compile
 - Swift 5.3
 
 ## Build Instructions
+
+### Using Xcode IDE
 1. Open the `CSE4283Assignment2.xcodeproj` file with Xcode.
-2. 
+2.  Ensure that the Scheme is set to `CSE4283Assignment2`.
+3. Build (⌘B)  or Run (⌘R) the project by clicking the Play button on the top left corner of the Xcode window.
+
+### Using Xcode Commandline Tool
+1. Open the root project directory in Terminal
+2. Run the following command to build the project
+`xcodebuild build -scheme CSE4283Assignment2`
 
 ## Unit Test Instructions
-
+1. Open the root project directory in Terminal
+2. Run the following command to build the project
+`xcodebuild test -scheme CSE4283Assignment2`
 
 ## Run Instructions

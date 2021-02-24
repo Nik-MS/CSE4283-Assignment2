@@ -28,5 +28,4 @@ class CSE4283Assignment2Tests: XCTestCase {
     func testBMIFunction() {
         XCTAssertTrue(bmi.testFunction())
     }
-    
 }

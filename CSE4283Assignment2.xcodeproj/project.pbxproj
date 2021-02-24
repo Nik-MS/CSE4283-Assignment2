@@ -33,6 +33,7 @@
 		EA0D567625E706A3000FF214 /* CSE4283Assignment2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSE4283Assignment2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0D567825E706A3000FF214 /* CSE4283Assignment2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSE4283Assignment2Tests.swift; sourceTree = "<group>"; };
 		EA0D567A25E706A3000FF214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA0D568B25E70E2F000FF214 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EAEEB94E25E70347004C47A5 /* CSE4283Assignment2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CSE4283Assignment2; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAEEB95125E70347004C47A5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EAEEB95D25E7055F004C47A5 /* BodyMassIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMassIndex.swift; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 		EAEEB94525E70347004C47A5 = {
 			isa = PBXGroup;
 			children = (
+				EA0D568B25E70E2F000FF214 /* README.md */,
 				EAEEB95025E70347004C47A5 /* CSE4283Assignment2 */,
 				EA0D567725E706A3000FF214 /* CSE4283Assignment2Tests */,
 				EAEEB94F25E70347004C47A5 /* Products */,
