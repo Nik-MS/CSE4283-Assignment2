@@ -1,6 +1,6 @@
 # CSE 4283 - Assignment 2
 
-The purpose of this commandline tool is to demonstrate the use of Test Driven Development (TDD).
+The purpose of the CSE4283Assignment2 commandline tool is to demonstrate the use of Test Driven Development (TDD).
 
 ## Requirements
 This project requires the following tools in order to compile
@@ -25,3 +25,7 @@ This project requires the following tools in order to compile
 `xcodebuild test -scheme CSE4283Assignment2`
 
 ## Run Instructions
+
+## BMI Calculation Formula
+
+An explanation for the formula used to determine the BMI with the Imperial system can be found [here](http://extoxnet.orst.edu/faqs/dietcancer/web2/twohowto.html).

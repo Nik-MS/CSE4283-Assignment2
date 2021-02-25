@@ -6,4 +6,7 @@
 //
 
 import Foundation
-import ArgumentParser
+
+struct RetirementCalculator {
+    
+}

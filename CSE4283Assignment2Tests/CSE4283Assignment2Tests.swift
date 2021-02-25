@@ -9,23 +9,25 @@ import XCTest
 @testable import CSE4283Assignment2
 
 class CSE4283Assignment2Tests: XCTestCase {
-    var bmi: BodyMassIndex!
+    var bmiCalculator: BMICalculator!
     
     // MARK: - Setup
     
+    // This method is called before the invocation of each test method in the class.
     override func setUp() {
         super.setUp()
-        bmi = BodyMassIndex()
+        bmiCalculator = BMICalculator()
     }
     
+    // This method is called after the invocation of each test method in the class.
     override func tearDown() {
         super.tearDown()
-        bmi = nil
+        bmiCalculator = nil
     }
     
     // MARK: - Tests
     
-    func testBMIFunction() {
-        XCTAssertTrue(bmi.testFunction())
+    func testInitialization() {
+        XCTAssertNotNil(bmiCalculator)
     }
 }

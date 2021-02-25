@@ -8,8 +8,7 @@
 import Foundation
 import ArgumentParser
 
-struct BodyMassIndex {
-    func testFunction() -> Bool {
-        return true
-    }
+/// Struct that encompasses necessary methods to calculate Body Mass Index.
+struct BMICalculator {
+    
 }
