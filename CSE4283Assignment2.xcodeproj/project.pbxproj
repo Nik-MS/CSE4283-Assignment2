@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EA0D567925E706A3000FF214 /* CSE4283Assignment2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0D567825E706A3000FF214 /* CSE4283Assignment2Tests.swift */; };
+		EA0D567925E706A3000FF214 /* BMICalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0D567825E706A3000FF214 /* BMICalculatorTests.swift */; };
 		EA0D568625E70A6A000FF214 /* BMICalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB95D25E7055F004C47A5 /* BMICalculator.swift */; };
 		EA0D568725E70A6A000FF214 /* RetirementCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB96025E7058F004C47A5 /* RetirementCalculator.swift */; };
 		EA0D568825E70A6A000FF214 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB95125E70347004C47A5 /* main.swift */; };
 		EA0D56A425E731D1000FF214 /* LineCandy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0D56A325E731D1000FF214 /* LineCandy.swift */; };
 		EA0D56B125E73E44000FF214 /* LineCandy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0D56A325E731D1000FF214 /* LineCandy.swift */; };
-		EA0D56B925E73F84000FF214 /* Tst.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0D56B825E73F84000FF214 /* Tst.swift */; };
 		EAEEB95225E70347004C47A5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB95125E70347004C47A5 /* main.swift */; };
 		EAEEB95B25E7043E004C47A5 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = EAEEB95A25E7043E004C47A5 /* ArgumentParser */; };
 		EAEEB95E25E7055F004C47A5 /* BMICalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB95D25E7055F004C47A5 /* BMICalculator.swift */; };
@@ -34,11 +33,10 @@
 
 /* Begin PBXFileReference section */
 		EA0D567625E706A3000FF214 /* CSE4283Assignment2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSE4283Assignment2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA0D567825E706A3000FF214 /* CSE4283Assignment2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSE4283Assignment2Tests.swift; sourceTree = "<group>"; };
+		EA0D567825E706A3000FF214 /* BMICalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculatorTests.swift; sourceTree = "<group>"; };
 		EA0D567A25E706A3000FF214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA0D568B25E70E2F000FF214 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EA0D56A325E731D1000FF214 /* LineCandy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCandy.swift; sourceTree = "<group>"; };
-		EA0D56B825E73F84000FF214 /* Tst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tst.swift; sourceTree = "<group>"; };
 		EAEEB94E25E70347004C47A5 /* CSE4283Assignment2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CSE4283Assignment2; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAEEB95125E70347004C47A5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EAEEB95D25E7055F004C47A5 /* BMICalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculator.swift; sourceTree = "<group>"; };
@@ -67,8 +65,7 @@
 		EA0D567725E706A3000FF214 /* CSE4283Assignment2Tests */ = {
 			isa = PBXGroup;
 			children = (
-				EA0D567825E706A3000FF214 /* CSE4283Assignment2Tests.swift */,
-				EA0D56B825E73F84000FF214 /* Tst.swift */,
+				EA0D567825E706A3000FF214 /* BMICalculatorTests.swift */,
 				EA0D567A25E706A3000FF214 /* Info.plist */,
 			);
 			path = CSE4283Assignment2Tests;
@@ -225,8 +222,7 @@
 				EA0D568625E70A6A000FF214 /* BMICalculator.swift in Sources */,
 				EA0D568725E70A6A000FF214 /* RetirementCalculator.swift in Sources */,
 				EA0D568825E70A6A000FF214 /* main.swift in Sources */,
-				EA0D56B925E73F84000FF214 /* Tst.swift in Sources */,
-				EA0D567925E706A3000FF214 /* CSE4283Assignment2Tests.swift in Sources */,
+				EA0D567925E706A3000FF214 /* BMICalculatorTests.swift in Sources */,
 				EA0D56B125E73E44000FF214 /* LineCandy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

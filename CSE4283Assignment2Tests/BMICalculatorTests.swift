@@ -8,7 +8,7 @@
 import XCTest
 @testable import CSE4283Assignment2
 
-class CSE4283Assignment2Tests: XCTestCase {
+class BMICalculatorTests: XCTestCase {
     var bmiCalculator: BMICalculator!
     
     // MARK: - Setup
