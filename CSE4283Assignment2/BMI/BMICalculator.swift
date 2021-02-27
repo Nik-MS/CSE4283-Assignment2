@@ -12,7 +12,6 @@ struct BMICalculator: Body {
     
     // MARK: - Constants
     
-    /// Conversion multiplier to convert from imperial Pounds (lbs). to metric meters (m).
     static let poundsToKilogramsMultiplier = 0.45
     static let feetToInchesMultiplier = 12
     static let inchesToMetersMultiplier = 0.025

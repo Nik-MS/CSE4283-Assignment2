@@ -49,6 +49,14 @@ class BMICalculatorTests: XCTestCase {
         bmiCalculator.setHeight(inFeet: 5, inches: 5)
         XCTAssertEqual(bmiCalculator.height, 65)
         XCTAssertEqual(bmiCalculator.metricHeight, 1.625)
+        
+        bmiCalculator.setHeight(inFeet: 0, inches: 5)
+        XCTAssertEqual(bmiCalculator.height, 5)
+        XCTAssertEqual(bmiCalculator.metricHeight, 0.125)
+        
+        bmiCalculator.setHeight(inFeet: 6, inches: 3)
+        XCTAssertEqual(bmiCalculator.height, 75)
+        XCTAssertEqual(bmiCalculator.metricHeight, 1.875)
     }
     
 //    func testCalculate() {
