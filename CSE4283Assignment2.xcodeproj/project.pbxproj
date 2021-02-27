@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,8 +13,9 @@
 		EA0D568825E70A6A000FF214 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB95125E70347004C47A5 /* main.swift */; };
 		EA0D56A425E731D1000FF214 /* LineCandy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0D56A325E731D1000FF214 /* LineCandy.swift */; };
 		EA0D56B125E73E44000FF214 /* LineCandy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0D56A325E731D1000FF214 /* LineCandy.swift */; };
+		EA5755B525E9DAA7005ED3E9 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9D783925E9D799004E5A4B /* Body.swift */; };
+		EA9D783A25E9D799004E5A4B /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9D783925E9D799004E5A4B /* Body.swift */; };
 		EAEEB95225E70347004C47A5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB95125E70347004C47A5 /* main.swift */; };
-		EAEEB95B25E7043E004C47A5 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = EAEEB95A25E7043E004C47A5 /* ArgumentParser */; };
 		EAEEB95E25E7055F004C47A5 /* BMICalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB95D25E7055F004C47A5 /* BMICalculator.swift */; };
 		EAEEB96125E7058F004C47A5 /* RetirementCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB96025E7058F004C47A5 /* RetirementCalculator.swift */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 		EA0D567A25E706A3000FF214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA0D568B25E70E2F000FF214 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EA0D56A325E731D1000FF214 /* LineCandy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCandy.swift; sourceTree = "<group>"; };
+		EA9D783925E9D799004E5A4B /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
 		EAEEB94E25E70347004C47A5 /* CSE4283Assignment2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CSE4283Assignment2; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAEEB95125E70347004C47A5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EAEEB95D25E7055F004C47A5 /* BMICalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculator.swift; sourceTree = "<group>"; };
@@ -55,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAEEB95B25E7043E004C47A5 /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +75,7 @@
 		EA0D569B25E73104000FF214 /* BMI */ = {
 			isa = PBXGroup;
 			children = (
+				EA9D783925E9D799004E5A4B /* Body.swift */,
 				EAEEB95D25E7055F004C47A5 /* BMICalculator.swift */,
 			);
 			path = BMI;
@@ -159,7 +161,6 @@
 			);
 			name = CSE4283Assignment2;
 			packageProductDependencies = (
-				EAEEB95A25E7043E004C47A5 /* ArgumentParser */,
 			);
 			productName = CSE4283Assignment2;
 			productReference = EAEEB94E25E70347004C47A5 /* CSE4283Assignment2 */;
@@ -192,7 +193,6 @@
 			);
 			mainGroup = EAEEB94525E70347004C47A5;
 			packageReferences = (
-				EAEEB95925E7043E004C47A5 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 			);
 			productRefGroup = EAEEB94F25E70347004C47A5 /* Products */;
 			projectDirPath = "";
@@ -222,6 +222,7 @@
 				EA0D568625E70A6A000FF214 /* BMICalculator.swift in Sources */,
 				EA0D568725E70A6A000FF214 /* RetirementCalculator.swift in Sources */,
 				EA0D568825E70A6A000FF214 /* main.swift in Sources */,
+				EA5755B525E9DAA7005ED3E9 /* Body.swift in Sources */,
 				EA0D567925E706A3000FF214 /* BMICalculatorTests.swift in Sources */,
 				EA0D56B125E73E44000FF214 /* LineCandy.swift in Sources */,
 			);
@@ -235,6 +236,7 @@
 				EAEEB96125E7058F004C47A5 /* RetirementCalculator.swift in Sources */,
 				EAEEB95225E70347004C47A5 /* main.swift in Sources */,
 				EA0D56A425E731D1000FF214 /* LineCandy.swift in Sources */,
+				EA9D783A25E9D799004E5A4B /* Body.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,25 +441,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		EAEEB95925E7043E004C47A5 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		EAEEB95A25E7043E004C47A5 /* ArgumentParser */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EAEEB95925E7043E004C47A5 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
-			productName = ArgumentParser;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EAEEB94625E70347004C47A5 /* Project object */;
 }

@@ -29,13 +29,20 @@ class BMICalculatorTests: XCTestCase {
     
     func testInitialization() {
         XCTAssertNotNil(bmiCalculator)
-        
     }
     
     func testConversionFromPoundsToKilograms() {
         bmiCalculator.setWeight(inPounds: 120)
-    
+        XCTAssertEqual(bmiCalculator.weight, 120)
         XCTAssertEqual(bmiCalculator.metricWeight, 54)
+        
+        bmiCalculator.setWeight(inPounds: 1)
+        XCTAssertEqual(bmiCalculator.weight, 1)
+        XCTAssertEqual(bmiCalculator.metricWeight, 0.45)
+        
+        bmiCalculator.setWeight(inPounds: 131)
+        XCTAssertEqual(bmiCalculator.weight, 131)
+        XCTAssertEqual(bmiCalculator.metricWeight, 58.95)
     }
     
 //    func testConversionFromHeightToMeters() {

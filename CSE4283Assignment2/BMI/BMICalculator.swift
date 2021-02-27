@@ -6,44 +6,31 @@
 //
 
 import Foundation
-import ArgumentParser
-
-protocol Calculator {
-    func calculate() -> Double
-}
-
-protocol Body {
-    var weight: Double! { get set }
-    var height: Double! { get set }
-}
 
 /// Struct that encompasses necessary methods to calculate Body Mass Index.
-struct BMICalculator: Calculator, Body {
-    static let weightConversionConstant = 0.45
+struct BMICalculator: Body {
+    
+    // MARK: - Constants
+    
+    /// Conversion multiplier to convert from imperial Pounds (lbs). to metric meters (m).
+    static let poundsToKilogramsMultiplier = 0.45
     
     // MARK: - Properties
     
-    var weight: Double!
-    var height: Double!
+    var weight: Int!
+    var height: Int!
     
     var metricWeight: Double {
         guard let weight = weight else {
             fatalError("weight has not been set")
         }
         
-        return weight * Self.weightConversionConstant
+        return Double(weight) * Self.poundsToKilogramsMultiplier
     }
     
     // MARK: - Conversion
     
-    mutating func setWeight(inPounds lbs: Double) {
+    mutating func setWeight(inPounds lbs: Int) {
         self.weight = lbs
-    }
-    
-    
-    
-    
-    func calculate() -> Double {
-        return 0
     }
 }
