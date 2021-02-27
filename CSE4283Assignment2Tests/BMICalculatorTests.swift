@@ -45,46 +45,45 @@ class BMICalculatorTests: XCTestCase {
         XCTAssertEqual(bmiCalculator.metricWeight, 58.95)
     }
     
-//    func testConversionFromHeightToMeters() {
-//        bmiCalculator.setHeight(inFeet: 5, inches: 5)
-    
-//        XCTAssert(bmiCalculator.metricHeight, 1.63)
-//    }
+    func testConversionFromHeightToMeters() {
+        bmiCalculator.setHeight(inFeet: 5, inches: 5)
+        XCTAssertEqual(bmiCalculator.height, 65)
+        XCTAssertEqual(bmiCalculator.metricHeight, 1.625)
+    }
     
 //    func testCalculate() {
 //        bmiCalculator.setWeight(inPounds: 120)
 //        bmiCalculator.setHeight(inFeet:5, inches: 5)
 //
-//        XCTAssert(bmiCalculator.calculate(), 20.30)
+//        XCTAssertEqual(bmiCalculator.calculate(), 20.30)
 //    }
     
     func testUnderWeight() {
 //        bmiCalculator.setWeight(inPounds: 99)
 //        bmiCalculator.setHeight(inFeet: 5, inches: 5)
 //
-//        ACTAssert(bmiCalculator.evaluation, BMI.Category.underweight)
+//        XCTAssertEqual(bmiCalculator.evaluation, BMI.Category.underweight)
     }
     
     func testNormalWeight() {
 //        bmiCalculator.setWeight(inPounds: 120)
 //        bmiCalculator.setHeight(inFeet: 5, inches: 5)
 //
-//        ACTAssert(bmiCalculator.evaluation, BMI.Category.normal)
+//        XCTAssertEqual(bmiCalculator.evaluation, BMI.Category.normal)
     }
     
     func testOverWeight() {
 //        bmiCalculator.setWeight(inPounds: 165)
 //        bmiCalculator.setHeight(inFeet: 5, inches: 5)
 //
-//        ACTAssert(bmiCalculator.evaluation, BMI.Category.overweight)
+//        XCTAssertEqual(bmiCalculator.evaluation, BMI.Category.overweight)
     }
     
     func testObeseWeight() {
 //        bmiCalculator.setWeight(inPounds: 220)
 //        bmiCalculator.setHeight(inFeet: 5, inches: 5)
 //
-//        ACTAssert(bmiCalculator.evaluation, BMI.Category.overweight)
-        
+//        XCTAssertEqual(bmiCalculator.evaluation, BMI.Category.overweight)
     }
     
 }

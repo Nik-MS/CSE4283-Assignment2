@@ -14,6 +14,8 @@ struct BMICalculator: Body {
     
     /// Conversion multiplier to convert from imperial Pounds (lbs). to metric meters (m).
     static let poundsToKilogramsMultiplier = 0.45
+    static let feetToInchesMultiplier = 12
+    static let inchesToMetersMultiplier = 0.025
     
     // MARK: - Properties
     
@@ -28,9 +30,17 @@ struct BMICalculator: Body {
         return Double(weight) * Self.poundsToKilogramsMultiplier
     }
     
+    var metricHeight: Double {
+        return Double(height) * Self.inchesToMetersMultiplier
+    }
+    
     // MARK: - Conversion
     
     mutating func setWeight(inPounds lbs: Int) {
         self.weight = lbs
+    }
+    
+    mutating func setHeight(inFeet ft: Int, inches: Int) {
+        self.height = (ft * 12) + inches
     }
 }
