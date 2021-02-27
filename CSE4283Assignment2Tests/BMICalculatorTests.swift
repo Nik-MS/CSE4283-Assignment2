@@ -32,11 +32,11 @@ class BMICalculatorTests: XCTestCase {
         
     }
     
-//    func testConversionFromPoundsToKilograms() {
-//        bmiCalculator.setWeight(inPounds: 120)
+    func testConversionFromPoundsToKilograms() {
+        bmiCalculator.setWeight(inPounds: 120)
     
-//        XCTAssertEqual(bmiCalculator.metricWeight, 54)
-//    }
+        XCTAssertEqual(bmiCalculator.metricWeight, 54)
+    }
     
 //    func testConversionFromHeightToMeters() {
 //        bmiCalculator.setHeight(inFeet: 5, inches: 5)
