@@ -8,7 +8,13 @@
 import Foundation
 import ArgumentParser
 
+protocol Calculator {
+    func calculate() -> Double
+}
+
 /// Struct that encompasses necessary methods to calculate Body Mass Index.
-struct BMICalculator {
-    
+struct BMICalculator: Calculator {
+    func calculate() -> Double {
+        return 0
+    }
 }
