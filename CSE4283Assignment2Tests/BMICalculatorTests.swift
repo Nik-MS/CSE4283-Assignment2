@@ -34,35 +34,36 @@ class BMICalculatorTests: XCTestCase {
     func testConversionFromPoundsToKilograms() {
         bmiCalculator.setWeight(inPounds: 120)
         XCTAssertEqual(bmiCalculator.weight, 120)
-        XCTAssertEqual(bmiCalculator.metricWeight, 54)
+        XCTAssertEqual(bmiCalculator.$weight, 54)
         
         bmiCalculator.setWeight(inPounds: 1)
         XCTAssertEqual(bmiCalculator.weight, 1)
-        XCTAssertEqual(bmiCalculator.metricWeight, 0.45)
+        XCTAssertEqual(bmiCalculator.$weight, 0.45)
         
         bmiCalculator.setWeight(inPounds: 131)
         XCTAssertEqual(bmiCalculator.weight, 131)
-        XCTAssertEqual(bmiCalculator.metricWeight, 58.95)
+        XCTAssertEqual(bmiCalculator.$weight, 58.95)
     }
     
     func testConversionFromHeightToMeters() {
         bmiCalculator.setHeight(inFeet: 5, inches: 5)
         XCTAssertEqual(bmiCalculator.height, 65)
-        XCTAssertEqual(bmiCalculator.metricHeight, 1.625)
+        XCTAssertEqual(bmiCalculator.$height, 1.625)
         
         bmiCalculator.setHeight(inFeet: 0, inches: 5)
         XCTAssertEqual(bmiCalculator.height, 5)
-        XCTAssertEqual(bmiCalculator.metricHeight, 0.125)
+        XCTAssertEqual(bmiCalculator.$height, 0.125)
         
         bmiCalculator.setHeight(inFeet: 6, inches: 3)
         XCTAssertEqual(bmiCalculator.height, 75)
-        XCTAssertEqual(bmiCalculator.metricHeight, 1.875)
+        XCTAssertEqual(bmiCalculator.$height, 1.875)
     }
     
+    // TODO: - Adjust Test Case
 //    func testCalculate() {
 //        bmiCalculator.setWeight(inPounds: 120)
 //        bmiCalculator.setHeight(inFeet:5, inches: 5)
-//        XCTAssertEqual(bmiCalculator.calculate(), 20.30)
+//        XCTAssertEqual(bmiCalculator.calculate(), 20.4)
 //    }
     
 //    func testUnderWeight() {

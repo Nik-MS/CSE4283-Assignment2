@@ -18,20 +18,13 @@ struct BMICalculator: Body {
     
     // MARK: - Properties
     
-    var weight: Int!
-    var height: Int!
     
-    var metricWeight: Double {
-        guard let weight = weight else {
-            fatalError("weight has not been set")
-        }
-        
-        return Double(weight) * Self.poundsToKilogramsMultiplier
-    }
-    
-    var metricHeight: Double {
-        return Double(height) * Self.inchesToMetersMultiplier
-    }
+    /// Contains a `Metric` property wrapper with a `projectedValue` to retrieve the metric conversion
+    /// unwrapped value represents weight in pounds.
+    @Metric(.poundsToKilograms) var weight: Int
+    /// Contains a `Metric` property wrapper with a `projectedValue` to retrieve the metric conversion
+    /// unwrapped value represents weight in inches.
+    @Metric(.inchesToMeters) var height: Int
     
     // MARK: - Conversion
     
