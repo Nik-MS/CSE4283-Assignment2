@@ -11,5 +11,5 @@ protocol Calculator {
     associatedtype resultType
     
     @discardableResult
-    func calculate() -> resultType
+    func calculate() throws -> resultType
 }

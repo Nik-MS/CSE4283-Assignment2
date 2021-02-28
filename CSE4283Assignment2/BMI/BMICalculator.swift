@@ -40,11 +40,27 @@ struct BMICalculator: Body {
 // MARK: - Calculator
 
 extension BMICalculator: Calculator {
+    enum BMICalculatorError: Error {
+        case invalidHeight(height: Int)
+        case invalidWeight(weight: Int)
+    }
     
     /// Calculates the body mass index value based on `Body` properties.
     /// - Returns: A double rounded to the nearest tenth.
+    
+    /// Calculates the body mass index value based on `Body` properties.
+    /// - Throws: `BMICalculatorError`. Height and Weight properties are thrown in imperical units.
+    /// - Returns:  A double rounded to the nearest tenth.
     @discardableResult
-    func calculate() -> Double {
+    internal func calculate() throws -> Double {
+        guard $weight != 0 else {
+            throw BMICalculatorError.invalidWeight(weight: weight)
+        }
+        
+        guard $height != 0 else {
+            throw BMICalculatorError.invalidHeight(height: height)
+        }
+        
         // Divide weight by the squared height
         let exactBMI = $weight / pow($height, 2)
         // Format value to nearest decimal tenth
