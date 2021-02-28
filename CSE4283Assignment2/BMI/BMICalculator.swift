@@ -12,19 +12,20 @@ struct BMICalculator: Body {
     
     // MARK: - Constants
     
-    static let poundsToKilogramsMultiplier = 0.45
-    static let feetToInchesMultiplier = 12
-    static let inchesToMetersMultiplier = 0.025
+    private static let underWeightRange = (0 ..< 18.5)
+    private static let normalWeightRange = (18.5 ... 24.9)
+    private static let overWeightRange = (25 ... 29.9)
+    
+    private static let feetToInchesMultiplier = 12
     
     // MARK: - Properties
     
-    
     /// Contains a `Metric` property wrapper with a `projectedValue` to retrieve the metric conversion
     /// unwrapped value represents weight in pounds.
-    @Metric(.poundsToKilograms) var weight: Int
+    @Metric(.poundsToKilograms) internal var weight: Int
     /// Contains a `Metric` property wrapper with a `projectedValue` to retrieve the metric conversion
     /// unwrapped value represents weight in inches.
-    @Metric(.inchesToMeters) var height: Int
+    @Metric(.inchesToMeters) internal var height: Int
     
     // MARK: - Conversion
     
@@ -33,7 +34,7 @@ struct BMICalculator: Body {
     }
     
     mutating func setHeight(inFeet ft: Int, inches: Int) {
-        self.height = (ft * 12) + inches
+        self.height = (ft * Self.feetToInchesMultiplier) + inches
     }
 }
 
@@ -44,9 +45,6 @@ extension BMICalculator: Calculator {
         case invalidHeight(height: Int)
         case invalidWeight(weight: Int)
     }
-    
-    /// Calculates the body mass index value based on `Body` properties.
-    /// - Returns: A double rounded to the nearest tenth.
     
     /// Calculates the body mass index value based on `Body` properties.
     /// - Throws: `BMICalculatorError`. Height and Weight properties are thrown in imperial units.
@@ -80,11 +78,11 @@ extension BMICalculator {
         
         let bmi = try calculate()
         
-        if (0 ..< 18.5).contains(bmi) {
+        if Self.underWeightRange.contains(bmi) {
             return .underWeight
-        } else if (18.5 ... 24.9).contains(bmi) {
+        } else if Self.normalWeightRange.contains(bmi) {
             return .normalWeight
-        } else if (25 ... 29.9).contains(bmi) {
+        } else if Self.overWeightRange.contains(bmi) {
             return .overWeight
         } else {
             return .obese
