@@ -147,13 +147,34 @@ class BMICalculatorTests: XCTestCase {
         bmiCalculator.setHeight(inFeet: 6, inches: 1)
         XCTAssertNotEqual(try bmiCalculator.evaluate(), BMICategory.normalWeight, "BMI at 25")
     }
-//
-//    func testOverWeight() {
-//        bmiCalculator.setWeight(inPounds: 165)
-//        bmiCalculator.setHeight(inFeet: 5, inches: 5)
-//
-//        XCTAssertEqual(bmiCalculator.evaluate(), BMICategory.overWeight)
-//    }
+
+    func testOverWeight() {
+        // Under Overweight range
+        bmiCalculator.setWeight(inPounds: 184)
+        bmiCalculator.setHeight(inFeet: 6, inches: 1)
+        XCTAssertNotEqual(try bmiCalculator.evaluate(), BMICategory.overWeight, "BMI at 24.9")
+        
+        // Minimum Overweight range
+        bmiCalculator.setWeight(inPounds: 185)
+        bmiCalculator.setHeight(inFeet: 6, inches: 1)
+        XCTAssertEqual(try bmiCalculator.evaluate(), BMICategory.overWeight, "BMI at 25")
+        
+        // In range
+        bmiCalculator.setWeight(inPounds: 200)
+        bmiCalculator.setHeight(inFeet: 6, inches: 1)
+        XCTAssertEqual(try bmiCalculator.evaluate(), BMICategory.overWeight, "BMI at 27")
+        
+        // Maximum Overweight range
+        bmiCalculator.setWeight(inPounds: 221)
+        bmiCalculator.setHeight(inFeet: 6, inches: 1)
+        XCTAssertEqual(try bmiCalculator.evaluate(), BMICategory.overWeight, "BMI at 29.9")
+        
+        // Over Overweight range
+        bmiCalculator.setWeight(inPounds: 222)
+        bmiCalculator.setHeight(inFeet: 6, inches: 1)
+        XCTAssertNotEqual(try bmiCalculator.evaluate(), BMICategory.overWeight, "BMI at 30")
+        
+    }
 //
 //    func testObeseWeight() {
 //        bmiCalculator.setWeight(inPounds: 220)
