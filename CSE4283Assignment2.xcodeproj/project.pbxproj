@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EA0CF91825EC188600EDE658 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0CF91725EC188600EDE658 /* Calculator.swift */; };
-		EA0CF91925EC188600EDE658 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0CF91725EC188600EDE658 /* Calculator.swift */; };
 		EA0CF92125EC1DDC00EDE658 /* Double+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0CF92025EC1DDC00EDE658 /* Double+Rounded.swift */; };
 		EA0CF92225EC1DDC00EDE658 /* Double+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0CF92025EC1DDC00EDE658 /* Double+Rounded.swift */; };
 		EA0D567925E706A3000FF214 /* BMICalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0D567825E706A3000FF214 /* BMICalculatorTests.swift */; };
@@ -39,7 +37,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EA0CF91725EC188600EDE658 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		EA0CF92025EC1DDC00EDE658 /* Double+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounded.swift"; sourceTree = "<group>"; };
 		EA0D567625E706A3000FF214 /* CSE4283Assignment2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSE4283Assignment2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0D567825E706A3000FF214 /* BMICalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculatorTests.swift; sourceTree = "<group>"; };
@@ -104,7 +101,6 @@
 				EA46ABF925EABF1500CFF30B /* Metric.swift */,
 				EA0CF92025EC1DDC00EDE658 /* Double+Rounded.swift */,
 				EA0D56A325E731D1000FF214 /* LineCandy.swift */,
-				EA0CF91725EC188600EDE658 /* Calculator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -231,7 +227,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA0CF91925EC188600EDE658 /* Calculator.swift in Sources */,
 				EA0D568625E70A6A000FF214 /* BMICalculator.swift in Sources */,
 				EA0D568725E70A6A000FF214 /* RetirementCalculator.swift in Sources */,
 				EA0D568825E70A6A000FF214 /* main.swift in Sources */,
@@ -248,7 +243,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAEEB95E25E7055F004C47A5 /* BMICalculator.swift in Sources */,
-				EA0CF91825EC188600EDE658 /* Calculator.swift in Sources */,
 				EAEEB96125E7058F004C47A5 /* RetirementCalculator.swift in Sources */,
 				EAEEB95225E70347004C47A5 /* main.swift in Sources */,
 				EA46ABFA25EABF1500CFF30B /* Metric.swift in Sources */,

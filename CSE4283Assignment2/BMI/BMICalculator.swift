@@ -38,19 +38,27 @@ struct BMICalculator: Body {
     }
 }
 
-// MARK: - Calculator
+// MARK: - Error
 
-extension BMICalculator: Calculator {
+extension BMICalculator {
     enum BMICalculatorError: Error {
         case invalidHeight(height: Int)
         case invalidWeight(weight: Int)
+    }
+}
+
+// MARK: - BMI
+
+extension BMICalculator {
+    enum BMICategory {
+        case underWeight, normalWeight, overWeight, obese
     }
     
     /// Calculates the body mass index value based on `Body` properties.
     /// - Throws: `BMICalculatorError`. Height and Weight properties are thrown in imperial units.
     /// - Returns:  A double rounded to the nearest tenth.
     @discardableResult
-    internal func calculate() throws -> Double {
+    internal func calculateBMI() throws -> Double {
         guard $weight > 0 else {
             throw BMICalculatorError.invalidWeight(weight: weight)
         }
@@ -64,19 +72,14 @@ extension BMICalculator: Calculator {
         // Format value to nearest decimal tenth
         return exactBMI.roundDecimal(.nearestTenth)
     }
-}
-
-// MARK: - Category
-
-enum BMICategory {
-    case underWeight, normalWeight, overWeight, obese
-}
-
-extension BMICalculator {
     
-    func evaluate() throws -> BMICategory {
+    
+    /// Evaluates the Body Mass Index value to a BMI category
+    /// - Throws: `BMICalculatorError` if the `calculateBMI()` call fails.
+    /// - Returns: `BMICategory`
+    func evaluateBMI() throws -> BMICategory {
         
-        let bmi = try calculate()
+        let bmi = try calculateBMI()
         
         if Self.underWeightRange.contains(bmi) {
             return .underWeight
