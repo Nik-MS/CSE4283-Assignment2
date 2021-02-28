@@ -49,7 +49,7 @@ extension BMICalculator: Calculator {
     /// - Returns: A double rounded to the nearest tenth.
     
     /// Calculates the body mass index value based on `Body` properties.
-    /// - Throws: `BMICalculatorError`. Height and Weight properties are thrown in imperical units.
+    /// - Throws: `BMICalculatorError`. Height and Weight properties are thrown in imperial units.
     /// - Returns:  A double rounded to the nearest tenth.
     @discardableResult
     internal func calculate() throws -> Double {

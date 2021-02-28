@@ -59,7 +59,7 @@ class BMICalculatorTests: XCTestCase {
         XCTAssertEqual(bmiCalculator.$height, 1.875)
     }
     
-    func testCalculate() {
+    func testSuccessfulCalculate() {
         bmiCalculator.setWeight(inPounds: 120)
         bmiCalculator.setHeight(inFeet:5, inches: 5)
         XCTAssertEqual(try! bmiCalculator.calculate(), 20.4)
@@ -72,7 +72,9 @@ class BMICalculatorTests: XCTestCase {
         bmiCalculator.setWeight(inPounds: 125)
         bmiCalculator.setHeight(inFeet: 5, inches: 3)
         XCTAssertEqual(try! bmiCalculator.calculate(), 22.7)
-        
+    }
+    
+    func testCalculateWithThrownError() {
         bmiCalculator.setWeight(inPounds: 0)
         bmiCalculator.setHeight(inFeet: 0, inches: 0)
         XCTAssertThrowsError(try bmiCalculator.calculate(), "Throws with Invalid Weight Error") { error in
@@ -87,7 +89,7 @@ class BMICalculatorTests: XCTestCase {
         bmiCalculator.setWeight(inPounds: 10)
         bmiCalculator.setHeight(inFeet: 0, inches: 0)
         XCTAssertThrowsError(try bmiCalculator.calculate(), "Throws with Invalid Height Error") { error in
-            switch error as! BMICalculator.BMICalculatorError {
+            switch error as? BMICalculator.BMICalculatorError {
             case let .invalidHeight(height):
                 XCTAssertEqual(height, 0)
             default:
