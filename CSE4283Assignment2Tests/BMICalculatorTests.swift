@@ -63,6 +63,15 @@ class BMICalculatorTests: XCTestCase {
         bmiCalculator.setWeight(inPounds: 120)
         bmiCalculator.setHeight(inFeet:5, inches: 5)
         XCTAssertEqual(bmiCalculator.calculate(), 20.4)
+        
+        bmiCalculator.setWeight(inPounds: 177)
+        bmiCalculator.setHeight(inFeet: 4, inches: 8)
+        XCTAssertEqual(bmiCalculator.calculate(), 40.6)
+        
+        // Example from: http://extoxnet.orst.edu/faqs/dietcancer/web2/twohowto.html
+        bmiCalculator.setWeight(inPounds: 125)
+        bmiCalculator.setHeight(inFeet: 5, inches: 3)
+        XCTAssertEqual(bmiCalculator.calculate(), 22.7)
     }
     
 //    func testUnderWeight() {
