@@ -53,11 +53,11 @@ extension BMICalculator: Calculator {
     /// - Returns:  A double rounded to the nearest tenth.
     @discardableResult
     internal func calculate() throws -> Double {
-        guard $weight != 0 else {
+        guard $weight > 0 else {
             throw BMICalculatorError.invalidWeight(weight: weight)
         }
         
-        guard $height != 0 else {
+        guard $height > 0 else {
             throw BMICalculatorError.invalidHeight(height: height)
         }
         
@@ -65,5 +65,29 @@ extension BMICalculator: Calculator {
         let exactBMI = $weight / pow($height, 2)
         // Format value to nearest decimal tenth
         return exactBMI.roundDecimal(.nearestTenth)
+    }
+}
+
+// MARK: - Category
+
+enum BMICategory {
+    case underWeight, normalWeight, overWeight, obese
+}
+
+extension BMICalculator {
+    
+    func evaluate() throws -> BMICategory {
+        
+        let bmi = try calculate()
+        
+        if (0 ..< 18.5).contains(bmi) {
+            return .underWeight
+        } else if (18.5 ... 24.9).contains(bmi) {
+            return .normalWeight
+        } else if (25 ... 29.9).contains(bmi) {
+            return .overWeight
+        } else {
+            return .obese
+        }
     }
 }

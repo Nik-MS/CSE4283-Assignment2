@@ -98,32 +98,31 @@ class BMICalculatorTests: XCTestCase {
         }
     }
     
-//    func testUnderWeight() {
-//        bmiCalculator.setWeight(inPounds: 99)
-//        bmiCalculator.setHeight(inFeet: 5, inches: 5)
-//
-//        XCTAssertEqual(bmiCalculator.evaluate(), BMICategory.underweight)
-//    }
+    func testUnderWeight() {
+        bmiCalculator.setWeight(inPounds: 99)
+        bmiCalculator.setHeight(inFeet: 5, inches: 5)
+
+        XCTAssertEqual(try bmiCalculator.evaluate(), BMICategory.underWeight)
+    }
     
 //    func testNormalWeight() {
 //        bmiCalculator.setWeight(inPounds: 120)
 //        bmiCalculator.setHeight(inFeet: 5, inches: 5)
 //
-//        XCTAssertEqual(bmiCalculator.evaluate(), BMICategory.normal)
+//        XCTAssertEqual(bmiCalculator.evaluate(), BMICategory.normalWeight)
 //    }
-    
+//
 //    func testOverWeight() {
 //        bmiCalculator.setWeight(inPounds: 165)
 //        bmiCalculator.setHeight(inFeet: 5, inches: 5)
 //
-//        XCTAssertEqual(bmiCalculator.evaluate(), BMICategory.overweight)
+//        XCTAssertEqual(bmiCalculator.evaluate(), BMICategory.overWeight)
 //    }
-    
+//
 //    func testObeseWeight() {
 //        bmiCalculator.setWeight(inPounds: 220)
 //        bmiCalculator.setHeight(inFeet: 5, inches: 5)
 //
 //        XCTAssertEqual(bmiCalculator.evaluate(), BMICategory.overweight)
 //    }
-    
 }
