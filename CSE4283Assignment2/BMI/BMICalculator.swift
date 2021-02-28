@@ -36,3 +36,17 @@ struct BMICalculator: Body {
         self.height = (ft * 12) + inches
     }
 }
+
+// MARK: - Calculator
+
+extension BMICalculator: Calculator {
+    
+    @discardableResult
+    func calculate() -> Double {
+        // Divide weight by the squared height
+        let exactBMI = $weight / pow($height, 2)
+        // Format value to nearest decimal tenth
+        let formattedBMI = ((exactBMI * 10).rounded()) / 10
+        return formattedBMI
+    }
+}
