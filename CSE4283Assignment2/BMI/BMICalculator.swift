@@ -41,12 +41,13 @@ struct BMICalculator: Body {
 
 extension BMICalculator: Calculator {
     
+    /// Calculates the body mass index value based on `Body` properties.
+    /// - Returns: A double rounded to the nearest tenth.
     @discardableResult
     func calculate() -> Double {
         // Divide weight by the squared height
         let exactBMI = $weight / pow($height, 2)
         // Format value to nearest decimal tenth
-        let formattedBMI = ((exactBMI * 10).rounded()) / 10
-        return formattedBMI
+        return exactBMI.roundDecimal(.nearestTenth)
     }
 }
