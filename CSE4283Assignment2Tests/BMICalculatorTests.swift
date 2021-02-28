@@ -32,17 +32,21 @@ class BMICalculatorTests: XCTestCase {
     }
     
     func testConversionFromPoundsToKilograms() {
-        bmiCalculator.setWeight(inPounds: 120)
-        XCTAssertEqual(bmiCalculator.weight, 120)
-        XCTAssertEqual(bmiCalculator.$weight, 54)
+        bmiCalculator.setWeight(inPounds: 0)
+        XCTAssertEqual(bmiCalculator.weight, 0)
+        XCTAssertEqual(bmiCalculator.$weight, 0)
         
         bmiCalculator.setWeight(inPounds: 1)
         XCTAssertEqual(bmiCalculator.weight, 1)
         XCTAssertEqual(bmiCalculator.$weight, 0.45)
         
-        bmiCalculator.setWeight(inPounds: 131)
-        XCTAssertEqual(bmiCalculator.weight, 131)
-        XCTAssertEqual(bmiCalculator.$weight, 58.95)
+        bmiCalculator.setWeight(inPounds: 120)
+        XCTAssertEqual(bmiCalculator.weight, 120)
+        XCTAssertEqual(bmiCalculator.$weight, 54)
+        
+        bmiCalculator.setWeight(inPounds: 1001)
+        XCTAssertEqual(bmiCalculator.weight, 1001)
+        XCTAssertEqual(bmiCalculator.$weight, 450.45)
     }
     
     func testConversionFromHeightToMeters() {
@@ -99,10 +103,22 @@ class BMICalculatorTests: XCTestCase {
     }
     
     func testUnderWeight() {
+        // Minimum
+        bmiCalculator.setWeight(inPounds: 1)
+        bmiCalculator.setHeight(inFeet: 12, inches: 0)
+        XCTAssertEqual(try bmiCalculator.evaluate(), BMICategory.underWeight, "BMI at 0")
+        // In range
         bmiCalculator.setWeight(inPounds: 99)
         bmiCalculator.setHeight(inFeet: 5, inches: 5)
-
-        XCTAssertEqual(try bmiCalculator.evaluate(), BMICategory.underWeight)
+        XCTAssertEqual(try bmiCalculator.evaluate(), BMICategory.underWeight, "BMI at 16.9")
+        // At max
+        bmiCalculator.setWeight(inPounds: 136)
+        bmiCalculator.setHeight(inFeet: 6, inches: 1)
+        XCTAssertEqual(try bmiCalculator.evaluate(), BMICategory.underWeight, "BMI at 18.4")
+        // Over max
+        bmiCalculator.setWeight(inPounds: 137)
+        bmiCalculator.setHeight(inFeet: 6, inches: 1)
+        XCTAssertNotEqual(try bmiCalculator.evaluate(), BMICategory.underWeight, "BMI at 18.5")
     }
     
 //    func testNormalWeight() {
