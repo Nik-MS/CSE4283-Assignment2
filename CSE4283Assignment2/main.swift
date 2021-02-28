@@ -9,7 +9,16 @@ import Foundation
 
 LC.title("CSE 4283 -- Assignment 2")
 
-let dummyData = ["Body Mass Index", "Retirement Savings"]
-let answer = LC.prompt("Select an Action to Perform", withChoices: dummyData)
+let answer = LC.prompt("Select an Action to Perform", withChoices: [BMICalculator.name])
 
-print("You selected to perform \(answer)")
+var bmiCalculator = BMICalculator()
+
+switch answer {
+case BMICalculator.name:
+    bmiCalculator.run()
+    
+default:
+    fatalError("Program \(answer) does not exist.")
+}
+
+

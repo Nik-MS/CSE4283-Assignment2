@@ -50,7 +50,7 @@ extension BMICalculator {
 // MARK: - BMI
 
 extension BMICalculator {
-    enum BMICategory {
+    enum BMICategory: String {
         case underWeight, normalWeight, overWeight, obese
     }
     

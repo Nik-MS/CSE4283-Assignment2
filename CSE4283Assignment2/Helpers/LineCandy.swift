@@ -72,4 +72,17 @@ enum LineCandy {
         
         return choices[chosenNumber]
     }
+    
+    @discardableResult
+    static func promptForInt(_ string: String) -> Int {
+        print("> \(string): ", terminator: "")
+        let userInput = readLine() ?? ""
+        
+        guard let integerInput = Int(userInput) else {
+            LC.error("You must enter a number.")
+            return promptForInt(string)
+        }
+        
+        return integerInput
+    }
 }
