@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		EA054B4925EC5C3700E37C03 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA054B4825EC5C3700E37C03 /* Interface.swift */; };
 		EA054B4A25EC5C3700E37C03 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA054B4825EC5C3700E37C03 /* Interface.swift */; };
+		EA054B4E25EC70C400E37C03 /* ExitInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA054B4D25EC70C400E37C03 /* ExitInterface.swift */; };
+		EA054B4F25EC70C400E37C03 /* ExitInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA054B4D25EC70C400E37C03 /* ExitInterface.swift */; };
+		EA054B5325EC733600E37C03 /* BMICalculator+Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA054B5225EC733600E37C03 /* BMICalculator+Interface.swift */; };
+		EA054B5425EC733600E37C03 /* BMICalculator+Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA054B5225EC733600E37C03 /* BMICalculator+Interface.swift */; };
 		EA0CF92125EC1DDC00EDE658 /* Double+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0CF92025EC1DDC00EDE658 /* Double+Rounded.swift */; };
 		EA0CF92225EC1DDC00EDE658 /* Double+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0CF92025EC1DDC00EDE658 /* Double+Rounded.swift */; };
 		EA0D567925E706A3000FF214 /* BMICalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0D567825E706A3000FF214 /* BMICalculatorTests.swift */; };
@@ -40,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		EA054B4825EC5C3700E37C03 /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
+		EA054B4D25EC70C400E37C03 /* ExitInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitInterface.swift; sourceTree = "<group>"; };
+		EA054B5225EC733600E37C03 /* BMICalculator+Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BMICalculator+Interface.swift"; sourceTree = "<group>"; };
 		EA0CF92025EC1DDC00EDE658 /* Double+Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Rounded.swift"; sourceTree = "<group>"; };
 		EA0D567625E706A3000FF214 /* CSE4283Assignment2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSE4283Assignment2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0D567825E706A3000FF214 /* BMICalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculatorTests.swift; sourceTree = "<group>"; };
@@ -72,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA054B5725EC735A00E37C03 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EA9D783925E9D799004E5A4B /* Body.swift */,
+				EA054B4825EC5C3700E37C03 /* Interface.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		EA0D567725E706A3000FF214 /* CSE4283Assignment2Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,8 +99,8 @@
 		EA0D569B25E73104000FF214 /* BMI */ = {
 			isa = PBXGroup;
 			children = (
-				EA9D783925E9D799004E5A4B /* Body.swift */,
 				EAEEB95D25E7055F004C47A5 /* BMICalculator.swift */,
+				EA054B5225EC733600E37C03 /* BMICalculator+Interface.swift */,
 			);
 			path = BMI;
 			sourceTree = "<group>";
@@ -102,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				EA46ABF925EABF1500CFF30B /* Metric.swift */,
-				EA054B4825EC5C3700E37C03 /* Interface.swift */,
+				EA054B4D25EC70C400E37C03 /* ExitInterface.swift */,
 				EA0CF92025EC1DDC00EDE658 /* Double+Rounded.swift */,
 				EA0D56A325E731D1000FF214 /* LineCandy.swift */,
 			);
@@ -132,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				EAEEB95125E70347004C47A5 /* main.swift */,
+				EA054B5725EC735A00E37C03 /* Protocols */,
 				EA0D56A125E7310F000FF214 /* Retirement */,
 				EA0D569B25E73104000FF214 /* BMI */,
 				EA0D56A925E73D8C000FF214 /* Helpers */,
@@ -232,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA0D568625E70A6A000FF214 /* BMICalculator.swift in Sources */,
+				EA054B4F25EC70C400E37C03 /* ExitInterface.swift in Sources */,
 				EA0D568725E70A6A000FF214 /* RetirementCalculator.swift in Sources */,
 				EA0D568825E70A6A000FF214 /* main.swift in Sources */,
 				EA5755B525E9DAA7005ED3E9 /* Body.swift in Sources */,
@@ -239,6 +256,7 @@
 				EA46ABFB25EABF1500CFF30B /* Metric.swift in Sources */,
 				EA0CF92225EC1DDC00EDE658 /* Double+Rounded.swift in Sources */,
 				EA0D56B125E73E44000FF214 /* LineCandy.swift in Sources */,
+				EA054B5425EC733600E37C03 /* BMICalculator+Interface.swift in Sources */,
 				EA054B4A25EC5C3700E37C03 /* Interface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,11 +267,13 @@
 			files = (
 				EAEEB95E25E7055F004C47A5 /* BMICalculator.swift in Sources */,
 				EAEEB96125E7058F004C47A5 /* RetirementCalculator.swift in Sources */,
+				EA054B4E25EC70C400E37C03 /* ExitInterface.swift in Sources */,
 				EAEEB95225E70347004C47A5 /* main.swift in Sources */,
 				EA054B4925EC5C3700E37C03 /* Interface.swift in Sources */,
 				EA46ABFA25EABF1500CFF30B /* Metric.swift in Sources */,
 				EA0D56A425E731D1000FF214 /* LineCandy.swift in Sources */,
 				EA0CF92125EC1DDC00EDE658 /* Double+Rounded.swift in Sources */,
+				EA054B5325EC733600E37C03 /* BMICalculator+Interface.swift in Sources */,
 				EA9D783A25E9D799004E5A4B /* Body.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

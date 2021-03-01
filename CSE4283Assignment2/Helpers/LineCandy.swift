@@ -39,24 +39,13 @@ enum LineCandy {
         print("\n !! ERROR: \(errorMsg)\n")
     }
     
-    /// Prints a given statement with an option list of choices. Method waits for user to enter a number by calling `readLine()`.
-    ///  Entering an invalid number will result in an error message and  `prompt(withChoices:)` is called recursively until a corrent input is provided.
-    /// - Parameter string: The statement for the prompt
-    /// - Parameter choices: The choices that a user can select from. Default value set to `nil`
-    /// - Returns: If options are not provided:  returns the user input as a `String` If options options are provided: Method returns the choice that the user selected as a `String`
     @discardableResult
-    static func prompt(_ string: String, withChoices choices: [String]? = nil) -> String {
-        
-        // Check if choices exist. Read and return user input if no choices exist.
-        guard let choices = choices else {
-            print("> \(string): ", terminator: "")
-            let userInput = readLine()
-            return userInput ?? ""
-        }
-        
+    static func prompt(_ string: String, withRunnableInterfaces interfaces: [Interface]) -> Interface {
         print("> \(string): ")
-        for index in choices.indices {
-            print("\t \(index). \(choices[index])")
+        
+        // List interface options
+        for index in interfaces.indices {
+            print("\t \(index). \(interfaces[index].name)")
         }
         
         print("> : ", terminator: "")
@@ -64,13 +53,13 @@ enum LineCandy {
         
         // Make sure user enterned a number within the range of choices.
         guard let chosenNumber = Int(userInput),
-              choices.indices.contains(chosenNumber) else {
+              interfaces.indices.contains(chosenNumber) else {
             
             LC.error("You must enter the specified number for a listed choice.")
-            return LC.prompt(string, withChoices: choices)
+            return LC.prompt(string, withRunnableInterfaces: interfaces)
         }
         
-        return choices[chosenNumber]
+        return interfaces[chosenNumber]
     }
     
     @discardableResult

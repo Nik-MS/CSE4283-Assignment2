@@ -1,5 +1,5 @@
 //
-//  Interface.swift
+//  BMICalculator+Interface.swift
 //  CSE4283Assignment2
 //
 //  Created by Nikhil Menon on 2/28/21.
@@ -7,17 +7,9 @@
 
 import Foundation
 
-
-protocol Interface {
-    static var name: String { get }
-    mutating func run()
-}
-
 extension BMICalculator: Interface {
-    static var name: String = "Body Mass Index Calculator"
-    
     mutating func run() {
-        LC.header(Self.name)
+        LC.header(name)
         
         let heightFeet = LC.promptForInt("Input height in feet")
         let heightInches = LC.promptForInt("Input remaining height in inches")

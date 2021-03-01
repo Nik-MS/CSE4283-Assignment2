@@ -9,6 +9,7 @@ import Foundation
 
 /// Struct that encompasses necessary methods to calculate Body Mass Index.
 struct BMICalculator: Body {
+    var name: String = "Body Mass Index Calculator"
     
     // MARK: - Constants
     
