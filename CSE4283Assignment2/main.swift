@@ -6,11 +6,18 @@
 //
 
 import Foundation
-import ArgumentParser
+
+var programs: [Interface] = [
+    BMICalculator(),
+    ExitInterface()
+]
 
 LC.title("CSE 4283 -- Assignment 2")
 
-let dummyData = ["Body Mass Index", "Retirement Savings"]
-let answer = LC.prompt("Select an Action to Perform", withChoices: dummyData)
 
-print("You selected to perform \(answer)")
+while true {
+    var selectedProgram = LC.prompt("Select a program to run", withRunnableInterfaces: programs)
+    selectedProgram.run()
+}
+
+
