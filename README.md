@@ -20,6 +20,15 @@ This project requires the following tools in order to compile
 `xcodebuild build -scheme CSE4283Assignment2`
 
 ## Unit Test Instructions
+
+### Using Xcode IDE
+1. Open the `CSE4283Assignment2.xcodeproj` file with Xcode.
+2.  Ensure that the Scheme is set to `CSE4283Assignment2`.
+3. Click and hold the Play button located on the top left corner of the XCode window (or press ⌘U).
+4. Upon hold, select **Test** to switch to the Test target.
+5. Click the play button again to run all tests.
+
+### Using Xcode Commandline Tool
 1. Open the root project directory in Terminal
 2. Run the following command to build the project
 `xcodebuild test -scheme CSE4283Assignment2`
