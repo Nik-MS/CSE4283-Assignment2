@@ -21,6 +21,7 @@ struct RetirementCalculator {
     private static let employerMatchMultiplier: Double = 1.35
     private static let validSalaryRange = (1 ... 500000)
     private static let validPercentageRange = (1 ... 100)
+    private static let validAgeRange = (1 ... 100)
     
     // MARK: - Methods
     
@@ -31,7 +32,7 @@ struct RetirementCalculator {
         self.goal = goal
     }
     
-    func getTotalAnnualSavings() throws -> Double {
+    internal func getTotalAnnualSavings() throws -> Double {
         guard Self.validSalaryRange.contains(salary) else {
             throw RetirementError.invalidSalary(salary: salary)
         }
@@ -43,13 +44,37 @@ struct RetirementCalculator {
         return (Double(salary) * $percentSaving) * Self.employerMatchMultiplier
     }
     
-    func getYearsToGoal() throws -> Int {
+    internal func getYearsToGoal() throws -> Int {
         guard goal > 0 else {
             throw RetirementError.invalidGoal(goal: goal)
         }
         
         let savingsPerYear = try getTotalAnnualSavings()
         return Int((Double(goal) / savingsPerYear).rounded(.up))
+    }
+    
+    typealias GoalAgeCompletionResult = (Result<Int, RetirementError>) -> Void
+    func calculateGoalAge(_ completion: GoalAgeCompletionResult) {
+        guard Self.validAgeRange.contains(age) else {
+            completion(.failure(.invalidAge(age: age)))
+            return
+        }
+        
+        var yearsToGoal: Int
+        
+        do {
+            yearsToGoal = try getYearsToGoal()
+        } catch let error {
+            if let error = error as? RetirementError {
+                completion(.failure(error))
+                return
+            } else {
+                fatalError("Unexpected Error in RetirementCalculator.calculateGoalAge(): \(error)")
+            }
+        }
+        
+        let ageAtGoal = yearsToGoal + age
+        completion(.success(ageAtGoal))
     }
 }
 
