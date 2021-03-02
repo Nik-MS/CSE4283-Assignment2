@@ -74,4 +74,8 @@ enum LineCandy {
         
         return integerInput
     }
+    
+    static func notice(_ string: String) {
+        print("\n\(string)\n")
+    }
 }

@@ -21,9 +21,9 @@ extension RetirementCalculator: Interface {
         calculateGoalAge { result in
             switch result {
             case .success(let ageAtGoal):
-                print("You will be \(ageAtGoal) years old when your savings reaches \(goal)")
+                LC.notice(("You will be \(ageAtGoal) years old when your savings reaches \(goal)"))
             case .failure(let error):
-                print(error.errorDescription ?? error)
+                LC.error(error.localizedDescription)
             }
         }
     }

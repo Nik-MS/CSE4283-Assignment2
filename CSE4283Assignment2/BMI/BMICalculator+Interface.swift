@@ -22,7 +22,7 @@ extension BMICalculator: Interface {
         do {
             let bmi = try calculateBMI()
             let resultCategory = try evaluateBMI()
-            print("You are considered \(resultCategory.rawValue) with a BMI of \(bmi)")
+            LC.notice("You are considered \(resultCategory.rawValue) with a BMI of \(bmi)")
         } catch let error {
             if let error = error as? BMICalculatorError {
                 switch error {
