@@ -18,6 +18,8 @@ extension RetirementCalculator.RetirementError: LocalizedError {
             return "The percent at which you saved (\(goal)%) is invalid. Please try again."
         case .invalidAge(let age):
             return "The age you entered (\(age)) is invalid. Please try again."
+        case .goalNotMetBeforeAge100:
+            return "Your age when your goal is is at or above 100. You likely won't reach your goal."
         }
     }
 }

@@ -28,6 +28,8 @@
 		EA9D783A25E9D799004E5A4B /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9D783925E9D799004E5A4B /* Body.swift */; };
 		EA9E26CB25EEACD80059A613 /* RetirementCalculator+Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9E26CA25EEACD80059A613 /* RetirementCalculator+Interface.swift */; };
 		EA9E26CF25EEB07B0059A613 /* RetirementError+LocalizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9E26CE25EEB07B0059A613 /* RetirementError+LocalizedError.swift */; };
+		EA9E26D425EEB86F0059A613 /* RetirementCalculator+Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9E26CA25EEACD80059A613 /* RetirementCalculator+Interface.swift */; };
+		EA9E26D725EEB8760059A613 /* RetirementError+LocalizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9E26CE25EEB07B0059A613 /* RetirementError+LocalizedError.swift */; };
 		EADBED7125EDDDC4004DE5B9 /* Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADBED7025EDDDC4004DE5B9 /* Percentage.swift */; };
 		EADBED7225EDDDC4004DE5B9 /* Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADBED7025EDDDC4004DE5B9 /* Percentage.swift */; };
 		EAEEB95225E70347004C47A5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB95125E70347004C47A5 /* main.swift */; };
@@ -270,9 +272,11 @@
 				EA46ABFB25EABF1500CFF30B /* Metric.swift in Sources */,
 				EA0CF92225EC1DDC00EDE658 /* Double+Rounded.swift in Sources */,
 				EA0D56B125E73E44000FF214 /* LineCandy.swift in Sources */,
+				EA9E26D425EEB86F0059A613 /* RetirementCalculator+Interface.swift in Sources */,
 				EA054B5425EC733600E37C03 /* BMICalculator+Interface.swift in Sources */,
 				EADBED7225EDDDC4004DE5B9 /* Percentage.swift in Sources */,
 				EA054B4A25EC5C3700E37C03 /* Interface.swift in Sources */,
+				EA9E26D725EEB8760059A613 /* RetirementError+LocalizedError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

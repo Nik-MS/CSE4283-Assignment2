@@ -10,6 +10,7 @@ import XCTest
 
 class RetirementCalculatorTests: XCTestCase {
     var retirementCalc: RetirementCalculator!
+    typealias RetirementError = RetirementCalculator.RetirementError
     
     // MARK: - Setup
     
@@ -150,6 +151,20 @@ class RetirementCalculatorTests: XCTestCase {
                 XCTAssertEqual(ageResult, 47)
             case .failure(_):
                 XCTFail("calculateGoalAge should not return a failure result")
+            }
+        }
+    }
+    
+    func testCalculateGoalAgeReturnsErrorForGoalNotMetBeforeAge100() {
+        retirementCalc.configure(withAge: 50, salary: 51852, percentSaved: 20, goal: 700000)
+        XCTAssertEqual(try retirementCalc.getYearsToGoal(), 50, "Years to goal should be 50")
+        
+        retirementCalc.calculateGoalAge { result in
+            switch result {
+            case .success(_):
+                XCTFail("Should fail with Goal not met before age 100")
+            case .failure(let error):
+                XCTAssertEqual(error.localizedDescription, RetirementError.goalNotMetBeforeAge100.localizedDescription)
             }
         }
     }

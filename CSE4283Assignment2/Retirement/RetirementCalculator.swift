@@ -75,6 +75,13 @@ struct RetirementCalculator {
         }
         
         let ageAtGoal = yearsToGoal + age
+        
+        print(ageAtGoal)
+        guard Self.validAgeRange.contains(ageAtGoal) else {
+            completion(.failure(.goalNotMetBeforeAge100))
+            return
+        }
+        
         completion(.success(ageAtGoal))
     }
 }
@@ -86,6 +93,7 @@ extension RetirementCalculator {
         case invalidSalary(salary: Int)
         case invalidSavingsPercentage(percentage: Int)
         case invalidGoal(goal: Int)
+        case goalNotMetBeforeAge100
         case invalidAge(age: Int)
     }
 }
