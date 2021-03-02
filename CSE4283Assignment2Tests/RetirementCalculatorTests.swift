@@ -108,7 +108,39 @@ class RetirementCalculatorTests: XCTestCase {
         XCTAssertEqual(try retirementCalc.getYearsToGoal(), 27, "Tests for round up. Actual value is 26.46")
     }
     
-//    func testCalculateAgeToGoal() {
-//
+//    func testCalculateGoalAgeReturnsErrorForInvalidMinAge() {
+//        retirementCalc.configure(withAge: 0, salary: 1, percentSaved: 1, goal: 1)
+//        retirementCalc.calculateGoalAge { result in
+//            switch result {
+//            case .success(_):
+//                XCTFail("calculate with 0 age should not be successful.")
+//            case .failure(let error):
+//                XCTAssertEqual(error, RetirementCalculator.RetirementError.invalidAge(age: 0))
+//            }
+//        }
+//    }
+    
+//    func testCalculateGoalAgeReturnsErrorForInvalidMaxAge() {
+//        retirementCalc.configure(withAge: 100, salary: 1, percentSaved: 1, goal: 1)
+//        retirementCalc.calculateGoalAge { result in
+//            switch result {
+//            case .success(_):
+//                XCTFail("calculate with 100 age should not be successful.")
+//            case .failure(let error):
+//                XCTAssertEqual(error, RetirementCalculator.RetirementError.invalidAge(age: 100))
+//            }
+//        }
+//    }
+    
+//    func testCalculateGoalAgeReturnsValidAge() {
+//        retirementCalc.configure(withAge: 21, salary: 72000, percentSaved: 10, goal: 250000)
+//        retirementCalc.calculateGoalAge { result in
+//            switch result {
+//            case .success(let ageResult):
+//                XCTAssertEqual(ageResult, 47)
+//            case .failure(_):
+//                XCTAssertEqual(error, RetirementCalculator.RetirementError.invalidAge(age: 100))
+//            }
+//        }
 //    }
 }
