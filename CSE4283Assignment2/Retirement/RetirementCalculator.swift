@@ -17,6 +17,8 @@ struct RetirementCalculator {
     var goal: Int!
     @Percentage var percentSaving = 0
     
+    var name: String = "Age at Retirement" // Interface protocol
+    
     // MARK: - Constants
     private static let employerMatchMultiplier: Double = 1.35
     private static let validSalaryRange = (1 ... 500000)

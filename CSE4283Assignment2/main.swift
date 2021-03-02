@@ -9,6 +9,7 @@ import Foundation
 
 var programs: [Interface] = [
     BMICalculator(),
+    RetirementCalculator(),
     ExitInterface()
 ]
 
