@@ -87,15 +87,25 @@ class RetirementCalculatorTests: XCTestCase {
     
     // MARK: - YearsToSavingsGoal
     
-    func testYearsToSavingsGoal() {
-        retirementCalc.configure(withAge: 21, salary: 10000, percentSaved: 5, goal: 0)
+    func testYearsToSavingsGoalThrowsForInvalidGoal() {
+        retirementCalc.salary = 1000
+        retirementCalc.percentSaving = 5
+        retirementCalc.goal = 0
         XCTAssertThrowsError(try retirementCalc.getYearsToGoal(), "Goal cannot be 0")
-        
-        retirementCalc.configure(withAge: 21, salary: 0, percentSaved: 5, goal: 1000)
-        XCTAssertThrowsError(try retirementCalc.getYearsToGoal(), "Salary is 0, error is thrown.")
-        
-        retirementCalc.configure(withAge: 21, salary: 72000, percentSaved: 10, goal: 1000000)
-        XCTAssertEqual(try retirementCalc.getYearsToGoal(), 103) // Tests for rounding up (actual value is 102.8)
+    }
+    
+    func testYearsToSavingsGoalWithMinGoal() {
+        retirementCalc.salary = 1000
+        retirementCalc.percentSaving = 5
+        retirementCalc.goal = 1
+        XCTAssertEqual(try retirementCalc.getYearsToGoal(), 1)
+    }
+    
+    func testYearsToSavingsGoalWithNormalGoal() {
+        retirementCalc.salary = 70000
+        retirementCalc.percentSaving = 10
+        retirementCalc.goal = 250000
+        XCTAssertEqual(try retirementCalc.getYearsToGoal(), 27, "Tests for round up. Actual value is 26.46")
     }
     
 //    func testCalculateAgeToGoal() {
