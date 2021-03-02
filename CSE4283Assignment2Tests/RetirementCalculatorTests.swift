@@ -25,35 +25,67 @@ class RetirementCalculatorTests: XCTestCase {
     
     // MARK: - GetTotalSavingsPerYear
     
-    func testSuccessfulGetTotalSavingsPerYear() {
-        // Minimum
-        retirementCalc.configure(withAge: 21, salary: 0, percentSaved: 1, goal: 1000000)
-        XCTAssertThrowsError(try retirementCalc.getTotalAnnualSavings(), "Cannot have 0 salary")
-        
-        // Normal
-        retirementCalc.configure(withAge: 21, salary: 72000, percentSaved: 10, goal: 1000000)
+    func testTotalSavingsPerYearWithBelowMinSalary() {
+        retirementCalc.salary = 0
+        retirementCalc.percentSaving = 5
+        XCTAssertThrowsError(try retirementCalc.getTotalAnnualSavings(), "Salary is below minimum")
+    }
+    
+    func testTotalSavingsPerYearWithMinSalary() {
+        retirementCalc.salary = 1
+        retirementCalc.percentSaving = 5
+        XCTAssertEqual(try retirementCalc.getTotalAnnualSavings(), 0.0675)
+    }
+    
+    func testTotalSavingsPerYearWithNormalSalary() {
+        retirementCalc.salary = 72000
+        retirementCalc.percentSaving = 10
         XCTAssertEqual(try retirementCalc.getTotalAnnualSavings(), 9720)
-        
-        // Max
-        retirementCalc.configure(withAge: 21, salary: 500000, percentSaved: 100, goal: 1000000)
+    }
+    
+    func testTotalSavingsPerYearWithMaxSalary() {
+        retirementCalc.salary = 500000
+        retirementCalc.percentSaving = 100
         XCTAssertEqual(try retirementCalc.getTotalAnnualSavings(), 675000)
     }
     
-    func testGetTotalSavingsPerYearThrowsError() {
-        // Below Minimum
-        retirementCalc.configure(withAge: 21, salary: -1, percentSaved: 1, goal: 1000000)
-        XCTAssertThrowsError(try retirementCalc.getTotalAnnualSavings(), "Salary is below minimum")
-        
-        retirementCalc.configure(withAge: 21, salary: 20000, percentSaved: 0, goal: 1000000)
-        XCTAssertThrowsError(try retirementCalc.getTotalAnnualSavings(), "Cannot compute below 1 percent savings")
-        
-        // Over Max
-        retirementCalc.configure(withAge: 21, salary: 500001, percentSaved: 100, goal: 1000000)
+    func testTotalSavingsPerYearWithOverMaxSalary() {
+        retirementCalc.salary = 500001
+        retirementCalc.percentSaving = 100
         XCTAssertThrowsError(try retirementCalc.getTotalAnnualSavings(), "Salary is above limit")
-        
-        retirementCalc.configure(withAge: 21, salary: 500001, percentSaved: 101, goal: 1000000)
+    }
+    
+    func testTotalSavingsPerYearWithBelowMinPercentSaved() {
+        retirementCalc.salary = 20000
+        retirementCalc.percentSaving = 0
+        XCTAssertThrowsError(try retirementCalc.getTotalAnnualSavings(), "Cannot compute below 1 percent savings")
+    }
+    
+    func testTotalSavingsPerYearWithMinPercentSaved() {
+        retirementCalc.salary = 20000
+        retirementCalc.percentSaving = 1
+        XCTAssertEqual(try retirementCalc.getTotalAnnualSavings(), 270)
+    }
+    
+    func testTotalSavingsPerYearWithNormalPercentSaved() {
+        retirementCalc.salary = 20000
+        retirementCalc.percentSaving = 12
+        XCTAssertEqual(try retirementCalc.getTotalAnnualSavings(), 3240)
+    }
+    
+    func testTotalSavingsPerYearWithMaxPercentSaved() {
+        retirementCalc.salary = 20000
+        retirementCalc.percentSaving = 100
+        XCTAssertEqual(try retirementCalc.getTotalAnnualSavings(), 27000)
+    }
+    
+    func testTotalSavingsPerYearWithOverMaxPercentSaved() {
+        retirementCalc.salary = 50000
+        retirementCalc.percentSaving = 101
         XCTAssertThrowsError(try retirementCalc.getTotalAnnualSavings(), "Cannot save over 100%")
     }
+    
+    // MARK: - YearsToSavingsGoal
     
     func testYearsToSavingsGoal() {
         retirementCalc.configure(withAge: 21, salary: 10000, percentSaved: 5, goal: 0)
