@@ -55,16 +55,16 @@ class RetirementCalculatorTests: XCTestCase {
         XCTAssertThrowsError(try retirementCalc.getTotalAnnualSavings(), "Cannot save over 100%")
     }
     
-//    func testYearsToSavingsGoal() {
-//        retirementCalc.configure(withAge: 21, salary: 10000, percentSaved: 5, goal: 0)
-//        XCTAssertThrowsError(try retirementCalc.getYearsToGoal(), "Goal cannot be 0")
+    func testYearsToSavingsGoal() {
+        retirementCalc.configure(withAge: 21, salary: 10000, percentSaved: 5, goal: 0)
+        XCTAssertThrowsError(try retirementCalc.getYearsToGoal(), "Goal cannot be 0")
         
-//        retirementCalc.configure(withAge: 21, salary: 0, percentSaved: 5, goal: 0)
-//        XCTAssertThrowsError(try retirementCalc.getYearsToGoal(), "Salary is 0, error is thrown.")
+        retirementCalc.configure(withAge: 21, salary: 0, percentSaved: 5, goal: 1000)
+        XCTAssertThrowsError(try retirementCalc.getYearsToGoal(), "Salary is 0, error is thrown.")
         
-//        retirementCalc.configure(withAge: 21, salary: 72000, percentSaved: 5, goal: 1000000)
-//        XCTAssertEqual(try retirementCalc.getYearsToGoal(), 103) // Tests for rounding up (actual value is 102.8)
-//    }
+        retirementCalc.configure(withAge: 21, salary: 72000, percentSaved: 10, goal: 1000000)
+        XCTAssertEqual(try retirementCalc.getYearsToGoal(), 103) // Tests for rounding up (actual value is 102.8)
+    }
     
 //    func testCalculateAgeToGoal() {
 //

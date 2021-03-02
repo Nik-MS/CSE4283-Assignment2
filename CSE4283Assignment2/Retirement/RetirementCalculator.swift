@@ -42,6 +42,15 @@ struct RetirementCalculator {
         
         return (Double(salary) * $percentSaving) * Self.employerMatchMultiplier
     }
+    
+    func getYearsToGoal() throws -> Int {
+        guard goal > 0 else {
+            throw RetirementError.invalidGoal(goal: goal)
+        }
+        
+        let savingsPerYear = try getTotalAnnualSavings()
+        return Int((Double(goal) / savingsPerYear).rounded(.up))
+    }
 }
 
 // MARK: - Error
