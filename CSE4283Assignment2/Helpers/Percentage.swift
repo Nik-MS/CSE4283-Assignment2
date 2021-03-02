@@ -7,15 +7,12 @@
 
 import Foundation
 
+/// Property wrapped that converts an `Int` into `Double` that represents the decimal representation of a percentage.
+/// - Example: Setting a `Percentage` property to 12 will have a projected `Double` value of 0.12
 @propertyWrapper struct Percentage {
+    var wrappedValue: Int
     
-    var wrappedValue: Double {
-        didSet {
-            wrappedValue = wrappedValue / 100
-        }
-    }
-    
-    init(wrappedValue: Double) {
-        self.wrappedValue = wrappedValue
+    var projectedValue: Double {
+        return Double(wrappedValue) / 100
     }
 }
