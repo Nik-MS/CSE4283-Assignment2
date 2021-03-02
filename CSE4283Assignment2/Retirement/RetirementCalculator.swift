@@ -8,6 +8,7 @@
 import Foundation
 
 struct RetirementCalculator {
+    typealias GoalAgeCompletionResult = (Result<Int, RetirementError>) -> Void
     
     // MARK: - Properties
     
@@ -17,11 +18,10 @@ struct RetirementCalculator {
     @Percentage var percentSaving = 0
     
     // MARK: - Constants
-    
     private static let employerMatchMultiplier: Double = 1.35
     private static let validSalaryRange = (1 ... 500000)
     private static let validPercentageRange = (1 ... 100)
-    private static let validAgeRange = (1 ... 100)
+    private static let validAgeRange = (1 ..< 100)
     
     // MARK: - Methods
     
@@ -52,8 +52,7 @@ struct RetirementCalculator {
         let savingsPerYear = try getTotalAnnualSavings()
         return Int((Double(goal) / savingsPerYear).rounded(.up))
     }
-    
-    typealias GoalAgeCompletionResult = (Result<Int, RetirementError>) -> Void
+
     func calculateGoalAge(_ completion: GoalAgeCompletionResult) {
         guard Self.validAgeRange.contains(age) else {
             completion(.failure(.invalidAge(age: age)))
@@ -78,7 +77,7 @@ struct RetirementCalculator {
     }
 }
 
-// MARK: - Error
+// MARK: - RetirementError
 
 extension RetirementCalculator {
     enum RetirementError: Error {
