@@ -24,6 +24,7 @@
 		EA46ABFA25EABF1500CFF30B /* Metric.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA46ABF925EABF1500CFF30B /* Metric.swift */; };
 		EA46ABFB25EABF1500CFF30B /* Metric.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA46ABF925EABF1500CFF30B /* Metric.swift */; };
 		EA5755B525E9DAA7005ED3E9 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9D783925E9D799004E5A4B /* Body.swift */; };
+		EA8D2D5525ED893000EDDBD2 /* RetirementCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8D2D5425ED893000EDDBD2 /* RetirementCalculatorTests.swift */; };
 		EA9D783A25E9D799004E5A4B /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9D783925E9D799004E5A4B /* Body.swift */; };
 		EAEEB95225E70347004C47A5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB95125E70347004C47A5 /* main.swift */; };
 		EAEEB95E25E7055F004C47A5 /* BMICalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEEB95D25E7055F004C47A5 /* BMICalculator.swift */; };
@@ -53,6 +54,7 @@
 		EA0D568B25E70E2F000FF214 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EA0D56A325E731D1000FF214 /* LineCandy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineCandy.swift; sourceTree = "<group>"; };
 		EA46ABF925EABF1500CFF30B /* Metric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metric.swift; sourceTree = "<group>"; };
+		EA8D2D5425ED893000EDDBD2 /* RetirementCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetirementCalculatorTests.swift; sourceTree = "<group>"; };
 		EA9D783925E9D799004E5A4B /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
 		EAEEB94E25E70347004C47A5 /* CSE4283Assignment2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CSE4283Assignment2; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAEEB95125E70347004C47A5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				EA0D567825E706A3000FF214 /* BMICalculatorTests.swift */,
+				EA8D2D5425ED893000EDDBD2 /* RetirementCalculatorTests.swift */,
 				EA0D567A25E706A3000FF214 /* Info.plist */,
 			);
 			path = CSE4283Assignment2Tests;
@@ -253,6 +256,7 @@
 				EA0D568825E70A6A000FF214 /* main.swift in Sources */,
 				EA5755B525E9DAA7005ED3E9 /* Body.swift in Sources */,
 				EA0D567925E706A3000FF214 /* BMICalculatorTests.swift in Sources */,
+				EA8D2D5525ED893000EDDBD2 /* RetirementCalculatorTests.swift in Sources */,
 				EA46ABFB25EABF1500CFF30B /* Metric.swift in Sources */,
 				EA0CF92225EC1DDC00EDE658 /* Double+Rounded.swift in Sources */,
 				EA0D56B125E73E44000FF214 /* LineCandy.swift in Sources */,
